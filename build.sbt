@@ -14,7 +14,8 @@ val commonSettings = Seq(
     name, version, scalaVersion
   ),
   publishMavenStyle := true,
-  credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+  bintrayReleaseOnPublish in ThisBuild := false,
+  licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 )
 
 lazy val root = (project in file("."))
