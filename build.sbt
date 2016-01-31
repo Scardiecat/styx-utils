@@ -1,10 +1,11 @@
 import NativePackagerHelper._
-
+enablePlugins(GitVersioning)
 
 val commonSettings = Seq(
   organization := "org.scardiecat",
-  version := "0.0.1",
+  version := "0.0.4",
   scalaVersion := "2.11.7",
+  scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-language:existentials", "-language:higherKinds"),
 
   // build info
   buildInfoPackage := "meta",
@@ -14,7 +15,8 @@ val commonSettings = Seq(
     name, version, scalaVersion
   ),
   publishMavenStyle := true,
-  bintrayReleaseOnPublish in ThisBuild := false,
+  bintrayReleaseOnPublish in ThisBuild := true,
+  bintrayPackageLabels := Seq("styx", "scala"),
   licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 )
 
